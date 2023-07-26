@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Drops of Jupyter | Final Project</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+        crossorigin="anonymous" />
+    
+    <!-- Fork Awesome (more icon styles) -->
+    <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" 
+        integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" 
+        crossorigin="anonymous">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" 
+        rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/styles.css" 
+        rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- Top of the page -->
+    <div class="wrapper">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top text-uppercase">
+            <a class="navbar-brand" href="index.html">Drops of Jupyter</a>
+            <i class="fa fa-heartbeat fa-3x" aria-hidden="true"></i>
+        </nav>
+    </div>
+
+    <!-- Header -->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="col-xs-12 col-sm-12 col-md-12 jumbotron text-center" style="background-image: url('https://cdn.pixabay.com/photo/2016/12/05/19/49/syringe-1884784_960_720.jpg');
+                background-size: cover; background-position: center; color: black">
+                  <h1><b>Drops of Jupyter</b></h1> <br><br><br>
+                  <h2><b>Saving the world through data</b></h2>
+                </div>
+        <div class="container-fluid">
+            <div class="row">
+              </div>
+            <h1 class="mb-0">Welcome</h1>
+            <hr />
+            <img src=https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b9461a76289325.5c651812bdd2e.gif>
+              
+
+            <!-- Statement piece -->
+            <p class="Statement">
+               Our aim is to be part of the solution with repsect to issues in the healthcare sector.  By looking at data, we hope to create
+               meaningful solutions, through analytics, that will impact progress. We are beginning in the field of diabetes, where our goal
+               is to begin using the skills recently acquired to get a picture of the issues as represented by data.  Join us as we begin our
+               journey. 
+            </p>
+        </div>
+    </header>
+
+    <!-- <div class="login">
+        <hi>Predict diabetes</h1>
+             <h3> Select the following drop down to predict diabetes</h3>
+    ​ -->
+             <!--<p>How old are you?</p>
+             <input type="radio" id="child" name="age" value="child">
+             <label for="child">17 years or younger</label><br>
+             <input type="radio" id="adult" name="age" value="adult">
+             <label for="adult">18 - 64 years</label><br>
+             <input type="radio" id="senior" name="age" value="senior">
+             <label for="senior">65 years or older</label>
+            
+    ​
+         Main Input For Receiving Query to our ML
+        <form action="{{ url_for('predict')}}"method="post">
+            <input type="text" name="Education" placeholder="Education" required="required" />
+            <input type="text" name="BMI" placeholder="BMI" required="required" />
+    ​
+            <button type="submit" class="btn"›Predict</button>
+        </form>
+    ​
+        <br>
+        <br>
+        {{ prediction_text }}
+    ​
+    </div> -->
+
+    <!-- Dashboard Grid Section -->
+    <section class="dashboard" id="dashboard">
+        <div class="container">
+            <h2 class="text-center text-uppercase text-secondary mb-0">
+                Dashboard
+            </h2>
+            <hr class="star-dark mb-5" />
+
+            <!-- Interactive Predictor -->
+                <div class="col-md-5 login">
+                    <br><h1><b>Predictor</b></h1><br>
+                        <h3> Input/Select the following drop downs to predict diabetes</h3>
+
+                    <!-- <form class="container-fluid bg-dark text-left"  
+                          style="color: whitesmoke"> -->
+                          <!-- action='/predict' -->
+                          <!-- method="post"> -->
+                        <!-- <br> -->
+
+                        <form action="{{ url_for('predict')}}" method="post">
+
+                        <label for="prediabetes">Ever been Prediabetic?</label><br>
+                            <select name = "prediabetes" id="prediabetes">
+                                <!-- <option value="null"></option> -->
+                                <option value="yes">yes</option>
+                                <option value="no">no</option>
+                            </select><br><br>
+
+                        <label for="weightlbs">Input Weight in Lbs:</label><br>
+                            <input name="weightlbs" type="text" id="weightlbs" class="form-control-sm"><br><br>
+
+                        <label for="height">Input Height in inches:</label><br>
+                            <input name="height" type="text" id="height" class="form-control-sm"><br><br>
+
+                        <label for="age">Input Age:</label><br>
+                            <input name="age" type="text" id="age" class="form-control-sm"><br><br>
+
+                        <label for="gender">Select Gender:</label><br>
+                            <select name="gender" id="gender">
+                                <!-- <option value="null"></option> -->
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </select><br><br>
+
+                        <label for="education">Select Education:</label><br>
+                            <select name="education" id="education">
+                                <!-- <option value="null"></option> -->
+                                <option value="Grade_1-11">1-11</option>
+                                <option value="12th_Grade_no_diploma">HS no Diploma</option>
+                                <option value="GED_Equivalent">GED Equivalent</option>
+                                <option value="High_School_Graduate">HS</option>
+                                <option value="Some_College_no_degree">Some College no degree</option>
+                                <option value="Associates_Occupational_Technical_Vocational">Associates Occupational/Technical/Vocational</option>
+                                <option value="Associates_Academic_Program">Associates Academic Program</option>
+                                <option value="Bachelor">Bachelor's Degree</option>
+                                <option value="Masters">Master's Degree</option>
+                                <option value="Greater_Than_Master">Terminal Degree</option>
+                            </select><br><br>
+
+                        <label for="race">Select Race:</label><br>
+                            <select name="race" id="race">
+                                <!-- <option value="null"></option> -->
+                                <option value="White_Only">White</option>
+                                <option value="African_American_Only">African American</option>
+                                <option value="Asian_Only">Asian</option>
+                                <option value="AIAN_Only">AIAN</option>
+                                <option value="AIAN_AND_other">AIAN Mixed</option>
+                                <option value="Other">Other</option>
+                            </select><br><br>
+
+                        <label for="hhincome">Input Household Income:</label><br>
+                            <input name = "income" type="text" id="hhincome" class="form-control-sm"><br><br>
+
+                        <label for="hhsize">Input Household Size:</label><br>
+                            <input name = "size" type="text" id="hhsize" class="form-control-sm"><br><br>
+
+                        <!-- <button type="submit" id="submit-button" class="btn btn-lg" style="background-color:rgb(145, 182, 214)">Predict</button> -->
+                        <input type="image" id="submit-button" src="https://www.riskdecisions.com/wp-content/uploads/2022/10/predict_risk_management_software_2022-768x317.jpg" width="250" height="80">
+                        <!-- <button type="submit" id="submit-button" class="btn btn-lg" style="background: https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/272250341_305044998328178_9052139494709559450_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DiPFCQdVmmAAX_PpFDi&_nc_ht=scontent-lga3-1.xx&oh=00_AfDmFEkDoD4Md9LI-sadSIfiAKmB9hjAHu4nUG9AFmJXfQ&oe=63BBCBEF"></button> -->
+                        <br><br>
+                        <button type="submit" class="btn">Predict</button>
+
+                    <!-- </form>  -->
+                    </form> 
+
+                    <br>
+                    <br>
+                    <h3>{{prediction_text}}</h3>
+
+                </div>
+        </div>
+   
+            <!-- Tableau Storyboard -->
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    <div class='tableauPlaceholder' 
+                        id='viz1672537492272' 
+                        style='position: relative'><noscript>
+                            <a href='#'>
+                                <img alt='Story 2 ' 
+                                    src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;fi&#47;finalproject_16711568635250&#47;Story2&#47;1_rss.png' 
+                                    style='border: none' />
+                            </a></noscript>
+                                <object class='tableauViz' style='display:none;'>
+                                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                                    <param name='embed_code_version' value='3' /> 
+                                    <param name='site_root' value='' />
+                                    <param name='name' value='finalproject_16711568635250&#47;Story2' />
+                                    <param name='tabs' value='no' />
+                                    <param name='toolbar' value='yes' />
+                                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;fi&#47;finalproject_16711568635250&#47;Story2&#47;1.png' /> 
+                                    <param name='animate_transition' value='yes' />
+                                    <param name='display_static_image' value='yes' />
+                                    <param name='display_spinner' value='yes' />
+                                    <param name='display_overlay' value='yes' />
+                                    <param name='display_count' value='yes' />
+                                    <param name='language' value='en-US' />
+                                    <param name='filter' value='publish=yes' />
+                                </object>
+                    </div>                
+                        <script type='text/javascript'>                    
+                            var divElement = document.getElementById('viz1672537492272');                    
+                            var vizElement = divElement.getElementsByTagName('object')[0];                    
+                                vizElement.style.width='1016px';vizElement.style.height='991px';                    
+                            var scriptElement = document.createElement('script');                    
+                                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                                vizElement.parentNode.insertBefore(scriptElement, vizElement);       
+                        </script>
+                </div>
+            
+    </section>
+
+    <!-- Interactive Chart -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <!-- Filters for the Table -->
+                <form class="bg-dark" style="color:whitesmoke">
+                    <p>Filter Search</p>
+                    <ul class="list-group bg-dark">
+
+                        <!-- "Age" element -->
+                        <li class="list-group-item bg-dark" style="color:whitesmoke">
+                            <label for="General_Health_Status">General Health Status</label>
+                            <input type="text" id="General_Health_Status" class="form-control-sm" placeholder="Very_Good" />
+                        </li>
+
+                        <!-- "Region" element -->
+                        <li class="list-group-item bg-dark" style="color:whitesmoke">
+                            <label for="Region">Enter Region</label>
+                            <input type="text" id="Region" class="form-control-sm" placeholder="North" />
+                        </li>
+
+                        <!-- "Gender" element -->
+                        <li class="list-group-item bg-dark" style="color:whitesmoke">
+                            <label for="Gender">Enter Gender</label>
+                            <input type="text" id="Gender" class="form-control-sm" placeholder="Female"  />
+                        </li>
+
+                        <!-- "Education" element -->
+                        <li class="list-group-item bg-dark" style="color:whitesmoke">
+                            <label for="Education">Enter Education</label>
+                            <input type="text" id="Education" class="form-control-sm" placeholder="Bachelor" />
+                        </li>
+
+                        <!-- "Diabetic Status" element -->
+                        <li class="list-group-item bg-dark" style="color:whitesmoke">
+                            <label for="Diabetes">Enter Diabetic Status</label>
+                            <input type="text" id="Diabetes" class="form-control-sm" placeholder="Yes" />
+                        </li>
+
+                        <!-- "BMI Status" element -->
+                        <li class="list-group-item bg-dark" style="color:whitesmoke">
+                            <label for="Categorical_BMI">Enter BMI Status</label>
+                            <input type="text" id="Categorical_BMI" class="form-control-sm" placeholder="Overweight" />
+                        </li>
+
+                        <!-- "Age" element -->
+                        <li class="list-group-item bg-dark" style="color:whitesmoke">
+                            <label for="Age">Enter Age</label>
+                            <input type="text" id="Age" class="form-control-sm" placeholder="35" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+
+            <div class="col-md-10 interactive-chart" style="height:41rem">
+                <!-- Table of Diabetes Data -->
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>General Health</th>
+                            <th>Diabetes</th>
+                            <th>Prediabetes</th>
+                            <th>Weight (Lbs)</th>
+                            <th>BMI</th>
+                            <th>Region</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Education</th>
+                            <th>Race</th>
+                            <th>Poverty Ratio</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Tools Section -->
+    <section class="bg-primary text-white mb-0" id="about">
+        <div class="container-fluid">
+            <h2 class="text-center text-uppercase text-white">Tools</h2>
+            <hr class="star-light mb-5" />
+
+            <p class="about-me text-center">
+                We are exploring this task using the following tools.
+            </p>
+        </div>
+
+        <!-- Tool Icons -->
+
+        <div class="container">
+            <div class="col-md-10 offset-md-1">
+                <div class="row text-center skills-row">
+                    <div class="col">
+                        <p class="about-me text-center">
+                            HTML
+                        </p>
+                        <i class="fab fa-html5 fa-3x"></i>
+                    </div>
+                    <div class="col">
+                        <p class="about-me text-center">
+                            CSS
+                        </p>
+                        <i class="fab fa-css3-alt fa-3x"></i>
+                    </div>
+                    <div class="col">
+                        <p class="about-me text-center">
+                            JavaScript
+                        </p>
+                        <i class="fab fa-js-square fa-3x"></i>
+                    </div>
+                    <div class="col">
+                        <p class="about-me text-center">
+                            Python
+                        </p>
+                        <i class="fa fa-python fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                        <p class="about-me text-center">
+                            Github
+                        </p>
+                        <i class="fab fa-github fa-3x"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 offset-md-1 bottom-row">
+                <div class="row text-center skills-row">
+                    <div class="col">
+                        <p class="about-me text-center">
+                            ReadMe
+                        </p>
+                        <i class="fa fa-markdown fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                        <p class="about-me text-center">
+                            Google
+                        </p>
+                        <i class="fab fa-google fa-3x"></i>
+                    </div>
+                    <div class="col">
+                        <p class="about-me text-center">
+                            Slack
+                        </p>
+                        <i class="fab fa-slack fa-3x"></i>
+                    </div>
+                    <div class="col">
+                        <p class="about-me text-center">
+                            Jupyter Notebook
+                        </p>
+                        <i class="fa fa-jupyter fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <div class="col">
+                        <p class="about-me text-center">
+                            SQL
+                        </p>
+                        <i class="fa fa-database fa-3x" aria-hidden="true"></i><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+    <!-- Footer -->
+    <footer class="footer text-center" id="connect">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <h2 class="text-center mb-3">
+                        Connect with Us
+                    </h2>
+
+                    <div class="row text-center skills-row">
+                        <div class="col">
+                            <p class="about-me text-center">
+                                Elina Dart
+                            </p>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <a class="btn-social text-center rounded-circle" href="https://github.com/DartElina">
+                                        <i class="fab fa-github-alt fa-3x"></i></a>
+                        </div>
+                        <div class="col">
+                            <p class="about-me text-center">
+                                Amy Ying Lin
+                            </p>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <a class="btn-social text-center rounded-circle" href="https://github.com/amyylin1">
+                                        <i class="fab fa-github-alt fa-3x"></i></a>
+                        </div>
+                        <div class="col">
+                            <p class="about-me text-center">
+                                Kevin Daniliuk
+                            </p>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <a class="btn-social text-center rounded-circle" href="https://github.com/daniliukk95">
+                                        <i class="fab fa-github-alt fa-3x"></i></a>
+                        </div>
+                        <div class="col">
+                            <p class="about-me text-center">
+                                Manny Linares
+                            </p>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <a class="btn-social text-center rounded-circle" href="https://github.com/MRLinares">
+                                        <i class="fab fa-github-alt fa-3x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright py-4 text-center text-white">
+        <div class="container">
+            <small>Copyright &copy; Amy Ying Lin, Elina Dart, Kevin Daniliuk, Manny Linares <br> Columbia Bootcamps 2022-2023</small>
+        </div>
+    </div>
+
+<!-- link D3.js and files to the HTML -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="static/js/dataframe.json"></script>
+<script src="static/js/app.js"></script>
+<script src="static/js/logic.js"></script>
+
+</body>
+
+</html>

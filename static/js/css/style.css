@@ -1,0 +1,150 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 100;
+}
+
+hr {
+    border-color: #fff;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+nav {
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+section h2 {
+    font-size: 2.25rem;
+    line-height: 2rem;
+}
+
+@media (min-width: 992px) {
+    section h2 {
+        font-size: 3rem;
+        line-height: 2.5rem;
+    }
+}
+
+.bg-dark {
+    background-color: #14161a !important;
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        padding-top: calc(2rem + 106px);
+        padding-bottom: 6rem;
+    }
+    header.masthead h1 {
+        font-size: 4.75em;
+        line-height: 4rem;
+    }
+    header.masthead h2 {
+        font-size: 1.75em;
+    }
+}
+
+.jumbotron {
+    padding-top: calc(2rem + 106px);
+    padding-bottom: 6rem;
+    position: relative;
+    background: url("https://cdn.pixabay.com/photo/2016/12/05/19/49/syringe-1884784_960_720.jpg") no-repeat center center;
+    width:100%;
+    height: 100%;
+    background-size: 100% 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: start;
+    top: 0;
+}
+
+
+/* button {
+    background: url("https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/272250341_305044998328178_9052139494709559450_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DiPFCQdVmmAAX_PpFDi&_nc_ht=scontent-lga3-1.xx&oh=00_AfDmFEkDoD4Md9LI-sadSIfiAKmB9hjAHu4nUG9AFmJXfQ&oe=63BBCBEF") no-repeat center center;
+    background-size: cover;
+} */
+
+@media (min-width: 992px) {
+    div.container-fluid {
+        padding-top: calc(2rem + 106px);
+        padding-bottom: 6rem;
+        margin-left: auto;
+        margin-right: auto;
+        top: 0;
+    }
+}
+
+.Statement,
+.about-me {
+    margin-top: 50px;
+    font-size: 1.2em;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+.bottom-row {
+    padding-bottom: 5rem;
+    margin-bottom: 50px;
+}
+
+input, 
+select {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.interactive-chart {
+    height: 450px;
+    overflow: scroll;
+}
+
+.footer {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #1a252f;
+    color: #fff;
+}
+
+.copyright {
+    background-color: #1a252f;
+}
+
+a:focus,
+a:hover,
+a:active {
+    color: #fff;
+}
+
+.close-link {
+    color: #316b30;
+}
+
+.close-link:focus,
+.close-link:hover,
+.close-link:active {
+    color: #316b30;
+}
+
+.bg-primary {
+    background-color: #316b30 !important;
+}
+
+.bg-secondary {
+    background-color: #0f1010 !important;
+}
