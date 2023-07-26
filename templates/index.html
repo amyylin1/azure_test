@@ -1,0 +1,53 @@
+<div class="login">
+    <h1> Select the following option to predict diabetes</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+
+        <label for="Income to provery ratio">Income to proverty ratio:</label>
+        <input type="number" id="Income to provery ratio" name="lratio" placeholder="Ratio"> 
+
+        <label for="Age">Age:</label>
+        <input type="number" id="Age" name="lage" placeholder="Age">
+
+
+    <form action="{{ url_for('predict')}}" method="post">
+
+        <p>BMI</p>
+        <input type="radio" name="options" value="0" id="option1" checked> Healthy Weight <br>
+        <input type="radio" name="options" value="1" id="option2"> Obese <br>
+        <input type="radio" name="options" value="2" id="option3"> Overweight <br>
+        <input type="radio" name="options" value="3" id="option4"> Underweight <br>
+        <input type="radio" name="options" value="4" id="option5"> Unknown <br>
+
+        <p>Education</p>
+        <input type="radio" name="options1" value="0" id="option1" checked> 12th grade (no diaploma) <br>
+        <input type="radio" name="options1" value="1" id="option2"> Associates academic program <br>
+        <input type="radio" name="options1" value="2" id="option3"> Associates occupational/technical/vocational <br>
+        <input type="radio" name="options1" value="3" id="option4"> Bachelor <br>
+        <input type="radio" name="options1" value="4" id="option5"> Unknown <br>
+        <input type="radio" name="options1" value="5" id="option6"> GED <br>
+        <input type="radio" name="options1" value="6" id="option7"> Grade 1-11 <br>
+        <input type="radio" name="options1" value="7" id="option8"> Greater than master <br>
+        <input type="radio" name="options1" value="8" id="option9"> High school graduate <br>
+        <input type="radio" name="options1" value="9" id="option10"> Master <br>
+        <input type="radio" name="options1" value="10" id="option11"> Refused <br>
+        <input type="radio" name="options1" value="11" id="option12"> Some college (no degree)<br>
+
+        <p>Race</p>
+        <input type="radio" name="options2" value="0" id="option1" checked> American indian and Alaskan native (AIAN) and other <br>
+        <input type="radio" name="options2" value="1" id="option2"> American indian and Alaskan native (AIAN) only <br>
+        <input type="radio" name="options2" value="2" id="option3"> African American <br>
+        <input type="radio" name="options2" value="3" id="option4"> Asian <br>
+        <input type="radio" name="options2" value="4" id="option5"> Unknown <br>
+
+
+        <button type="submit" class="btn">Predict</button>
+
+    </form>
+
+
+    <br>
+    <br>
+    {{ prediction_text }}
+
+</div>
